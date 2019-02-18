@@ -27,5 +27,5 @@ do
          --url "https://hclsoftware.compliance.flexnetoperations.com/api/1.0/instances/${dvc}/clients/${clnt}/features" \
          --header "Content-Type: application/json" \
          --header "Authorization: Bearer ${tkn}" 2> /dev/null | grep -i usecount | tr -d , | awk '{ print $3 }'
-  done | awk -v var="${dvc2}" 'BEGIN {sum=0} {sum+=$1} END { printf "%4d %s %s %s\n",  sum, "licenses used (", var, ")"}'
+  done | awk -v var="${dvc2}" 'BEGIN {sum=0} {sum+=$1} END { printf "%d %s %s %s\n",  sum, "licenses used (", var, ")"}'
 done < fnohosts
