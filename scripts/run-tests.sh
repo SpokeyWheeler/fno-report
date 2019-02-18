@@ -1,7 +1,7 @@
 #!/bin/bash
 set -ev
 # unit tests here
-shellcheck oldhc
+shellcheck fnosummary
 if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then
   :
   # integration tests here
