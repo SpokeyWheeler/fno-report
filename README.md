@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f1df2a4676cc405fa7da582d227a75e9)](https://app.codacy.com/app/Zinaida/fno-report?utm_source=github.com&utm_medium=referral&utm_content=SpokeyWheeler/fno-report&utm_campaign=Badge_Grade_Dashboard)
 [![Build Status](https://travis-ci.com/SpokeyWheeler/fno-report.svg?branch=master)](https://travis-ci.com/SpokeyWheeler/fno-report)
 [![CodeFactor](https://www.codefactor.io/repository/github/spokeywheeler/fno-report/badge)](https://www.codefactor.io/repository/github/spokeywheeler/fno-report)
 
