@@ -23,7 +23,7 @@ For each Device
 
 Put your password into the fnoadminpasswd file.
 
-Put each ID in your fnohosts file, optionally following with infomration about its use.
+Put each ID in your fnohosts file, optionally following with information about its use.
 
 You should now be able to execute the _fnosummary_ script.
 
