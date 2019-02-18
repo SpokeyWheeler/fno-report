@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.com/SpokeyWheeler/fno-report.svg?branch=master)](https://travis-ci.com/SpokeyWheeler/fno-report)
+[![CodeFactor](https://www.codefactor.io/repository/github/spokeywheeler/fno-report/badge)](https://www.codefactor.io/repository/github/spokeywheeler/fno-report)
+
 # fno-report
 Informix licence report generation for FlexNet Operations portal
 
