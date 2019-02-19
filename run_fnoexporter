@@ -2,5 +2,5 @@
 
 FNODIR=/opt/fno # where you installed this
 
-cd $FNODIR/fno-report
+cd $FNODIR/fno-report || exit
 ./fnoexporter
