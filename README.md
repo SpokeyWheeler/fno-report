@@ -27,6 +27,14 @@ Put each ID in your fnohosts file, optionally following with information about i
 
 You should now be able to execute the _fnosummary_ script.
 
+There is also a simple Prometheus text file exporteer called _fnoexporter_ and a "cronable" runner, _run_fnoexporter_
+
+Sample cron file entry:
+
+```cron
+*/2 * * * * su -s "/bin/bash" -c "/opt/fno-report/run_fnoexporter.sh" prometheus
+```
+
 License
 -------
 
