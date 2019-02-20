@@ -1,0 +1,6 @@
+#!/bin/bash
+
+FNODIR=/opt/fno # where you installed this
+
+cd $FNODIR/fno-report || exit
+./fnoexporter
