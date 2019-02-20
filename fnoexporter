@@ -12,7 +12,7 @@ echo "# HELP informix_fno_licenses number of licenses in use from the FNO portal
 echo "# TYPE informix_fno_licenses gauge" >> "${colldir}"/informix_fno.$$
 
 # data
-./fnosummary | awk '{ printf "%s%s%s %d\n","informix_fno_licenses{device=\"", $5 , "\"} ", $1 }' >> "${colldir}"/informix_fno.$$
+./fnosummary | awk '{ printf "%s%s%s%s%s %d\n", "informix_fno_licenses{device=\"", $5, "\",site=\"", $6, "\"}", $1 }' >> "${colldir}"/informix_fno.$$
 
 # move the finished file to a usable name
 mv "${colldir}"/informix_fno.$$ "${colldir}"/informix_fno.prom
