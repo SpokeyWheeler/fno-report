@@ -17,15 +17,5 @@ do
   dvc=$( echo "${dvc2}" | awk '{print $1}' )
   tkn=$( curl --request 'POST' --url "https://hclsoftware.compliance.flexnetoperations.com/api/1.0/instances/${dvc}/authorize" --header 'Content-Type: application/json' -d "{ \"user\" : \"admin\", \"password\" : \"${fnopwd}\" }" 2> /dev/null | grep token | tr -d \" | awk '{print $3}' )
 
-  for clnt in $( curl --request "GET" \
-                    --url "https://hclsoftware.compliance.flexnetoperations.com/api/1.0/instances/${dvc}/clients"\
-                    --header "Content-Type: application/json"\
-                    --header "Authorization: Bearer ${tkn}" 2> /dev/null | grep "\"id\"" | tr -d , | awk '{ print $3 }' )
-  do
-    # curl --request "GET" --url "https://hclsoftware.compliance.flexnetoperations.com/api/1.0/instances/${dvc}/clients/${clnt}/features" --header "Content-Type: application/json" --header "Authorization: Bearer ${tkn}" > x.xx
-    curl --request "GET" \
-         --url "https://hclsoftware.compliance.flexnetoperations.com/api/1.0/instances/${dvc}/clients/${clnt}/features" \
-         --header "Content-Type: application/json" \
-         --header "Authorization: Bearer ${tkn}" 2> /dev/null | grep -i usecount | tr -d , | awk '{ print $3 }'
-  done | awk -v var="${dvc2}" 'BEGIN {sum=0} {sum+=$1} END { printf "%d %s %s %s\n",  sum, "licenses used (", var, ")"}'
+  curl --request "GET" --url "https://hclsoftware.compliance.flexnetoperations.com/api/1.0/instances/${dvc}/features" --header "Content-Type: application/json" --header "Authorization: Bearer ${tkn}" 2> /dev/null | grep used | head -1 | tr -d , | awk -v var="${dvc2}" '{printf "%d %s %s %s\n", $3, "licenses used (", var, ")"}'
 done < fnohosts
